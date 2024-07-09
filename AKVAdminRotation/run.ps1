@@ -7,7 +7,7 @@ function GeneratePassword([int]$Length){
 }
 
 function AddSecretToKeyVault($keyVAultName,$secretName,$newPassValue,$exprityDate,$tags){
-    Set-AzKeyVaultSecret -VaultName $keyVAultName -Name $secretName -SecretValue $secretvalue -Tag $tags -Expires $expiryDate
+    Set-AzKeyVaultSecret -VaultName $keyVAultName -Name $secretName -SecretValue $newPassValue -Tag $tags -Expires $expiryDate
 }
 
 function UpdateVM($newPassValue,$credentialId){
