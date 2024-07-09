@@ -18,7 +18,7 @@ function UpdateVM($newPassValue,$credentialId){
     $split = $providerAddress -split '/'
     $RgName = $split[4]
     $VmName = $split[-1]
-    Set-AzVMAccessExtension -ResourceGroupName $RgName -Location $Location -name enablevmAccess -VMName $VmName -Credential ($cred) -typeHandlerVersion "2.0"
+    Set-AzVMAccessExtension -ResourceGroupName $RgName -name enablevmAccess -VMName $VmName -Credential ($cred) -typeHandlerVersion "2.0"
 }
 
 function RoatateSecret($keyVaultName,$secretName){
