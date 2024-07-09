@@ -11,7 +11,7 @@ function AddSecretToKeyVault($keyVAultName,$secretName,$newPassValue,$exprityDat
 }
 
 function UpdateVM($newPassValue,$credentialId){
-    $cred = New-Object System.Management.Automation.PSCredential ("username", $newPassValue)
+    $cred = New-Object System.Management.Automation.PSCredential ($credentialId, $newPassValue)
     $split = $providerAddress -split '/'
     $RgName = $split[4]
     $VmName = $split[-1]
