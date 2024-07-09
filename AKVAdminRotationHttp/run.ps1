@@ -79,7 +79,7 @@ Try{
 }
 Catch{
     $status = [HttpStatusCode]::InternalServerError
-    $body = "Error during secret rotation"
+    $body = "Error during secret rotation $($_.Exception.Message)"
     Write-Error "Secret Rotation Failed: $_.Exception.Message"
 }
 Finally
